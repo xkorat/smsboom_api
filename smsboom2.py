@@ -230,53 +230,11 @@ def get_phone():
     response = requests.post(url, headers=headers)
     return response.text
 
-@add_request
-def get_phone(): 
-    url = "https://gwdapi.ynjspx.cn/user-server/code/getValidateCode"
-    headers = {
-        "Connection": "keep-alive",
-        "sec-ch-ua": '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-        "Accept": "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-        "sec-ch-ua-mobile": "?0",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0",
-        "sec-ch-ua-platform": '"Windows"',
-        "Origin": "https://education-gw-auth.ynjspx.cn",
-        "Sec-Fetch-Site": "same-site",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Dest": "empty",
-        "Referer": "https://education-gw-auth.ynjspx.cn/",
-        "Accept-Language": "zh-CN,zh;q=0.9",
-        "Accept-Encoding": "gzip, deflate",
-    }
-    payload = {
-        "request": {
-            "codeType": 8,
-            "mobilePhoneNumber": phone
-        }
-    }
-    data = json.dumps(payload)
-    response = requests.post(url, headers=headers, data=data)
-    return response.text
 
-@add_request
-def get_phone(): 
-    url = "https://rest-api.ymi.ai/api/bbs/user/sendSmsVerifyCode"
-    params = {
-        "phone": phone
-    }
-    response = requests.get(url,params=params,verify=False)
-    return response.text
 
-@add_request
-def get_phone():
-    url = 'http://115.236.87.228:8181/mall/login/checkPhone'
-    data = {
-        'telephone': phone,
-        'type': 'login'
-    }
-    response = requests.post(url, data=data)
-    return response.text
+
+
+
 
 @add_request
 def get_phone():  
